@@ -1,4 +1,4 @@
-# Module 06 - File de messages
+# Module 06 - File de messages - Exercice 3
 
 ## Pré-requis
 
@@ -16,66 +16,6 @@ choco install rabbitmq
 - Acceptez d'exécuter tous les scripts
 - Une fois installé, validez que le service est démarré et fonctionnel en tapant la commande suivante : ```rabbitmqctl.bat status```
 - Si la commande ne fonctionne pas, ajoutez le répertoire "c:\program files\RabbitMQ server\rabbitmq_server-x-y-z\sbin" à votre variable d'environnement "PATH" en adaptant le chemin à votre installation
-
-## Exercice 1 - Mes premiers messages
-
-- Créez la solution "DSED_M06_ProdCons" avec deux projets de type "console"
-  - Le premier produira des messages. Les messages sont lu sur la console (ReadLine) et envoyé sur la file "m06-mes-premiers-messages"
-  - Le second programme doit écouter la file "m06-mes-premiers-messages" en continu et afficher les messages reçus sur la console
-
-## Exercice 2 - Création de clients
-
-Un client est défini par :
-
-- Un identifiant de type Guid
-- Un prénom, un nom
-- Une adresse courriel
-- Un numéro de téléphone
-
-### Exercice 2.1 - Version simple
-
-- Créez la solution "DSEC_M06_Clients" avec deux projets de type "console" :
-  - "M06_Clients_Producteur_UI" : permet de saisir un client et de l'envoyer à la file de messages "m06-clients". Le client est envoyé sous forme de document JSON
-  - "M06_Clients_Consommateur" : écoute la file "m06-clients" et enregistrer les clients dans une base de données
-- Essayez le programme
-
-<details>
-  <summary>Indices</summary>
-
-![Schéma fonctionnel des comptes](img/schema_fonctionnel_client.png)
-
-</details>
-
-<details>
-    <summary>Proposition solution - diagramme de packages</summary>
-
-![Proposition de digramme de packages](img/../../images/Module06_FileMessages/diag/uml_exercice2_package/clients_packages.png)
-
-</details>
-
-<details>
-    <summary>Proposition solution - diagramme de classes</summary>
-
-![Proposition de digramme de packages](img/../../images/Module06_FileMessages/diag/uml_exercice2/clients_classes.png)
-
-</details>
-
-### Exercice 2.2 - Ajoutons une enveloppe
-
-Plutôt que d'envoyer votre client directement, vous devez utiliser une enveloppe qui contient :
-
-- Le type d'action, ici "create"
-- Un identifiant d'action
-- Le client
-
-Modifiez le programme pour tenir compte de cette dernière contrainte.
-
-<details>
-    <summary>Proposition solution - diagramme de classes</summary>
-
-![Proposition de digramme de packages](img/../../images/Module06_FileMessages/diag/uml_exercice2_enveloppe/clients_classes_enveloppe.png)
-
-</details>
 
 ## Exercice 3 - Gestion d'un compte bancaire
 
